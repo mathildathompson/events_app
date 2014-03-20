@@ -1,0 +1,15 @@
+<h1>Sydney Talks Planner</h1>
+
+
+  <% @events.each do |event| %>
+     <ul>
+        <li><h2><%= event.title %></h2></li>
+        <li><%= event.description %></li>
+        <li><%= event.date %></li>
+        <li><%= event.time %></li>
+        <li><%= event.location %></li>
+        <li>$<%= event.price %></li>
+        <li><%= event.contact %></li>
+     </ul>
+ <% end %>
+
