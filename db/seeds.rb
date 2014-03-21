@@ -11,3 +11,8 @@ e2 = Event.create(:title => 'All About Women: Egypt, The War On Women And The Ar
 
 e3 = Event.create(:title => 'Blue Dragon: a Framework for a Mission to Mars ', :description => 'Blue Dragon is a concept to use commercial hardware for a future mission to Mars. Shaun Moss explains how a project with close collaboration between the world\'s most powerful and technically proficient nations may lead to world peace and further collaboration on other global issues such as climate change.', :time => '7:30pm-9:30pm',:date => '14/4/2014', :location =>'Discovery, Sydney Observatory, Watson rd, The Rocks', :price => 2, :contact => 'Sydney Space Frontier Society (02) 9150-4553')
 
+u1.events = [e1, e2, e3]
+u2.events = [e3]
+e3.users = [u3]
+
+
