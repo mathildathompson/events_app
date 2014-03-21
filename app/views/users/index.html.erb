@@ -1,7 +1,12 @@
 <h1>Users</h1>
  <% @users.each do |user| %>
      <ul>
-        <li><%= user.first_name %> <%= user.last_name %></li>
-        <ul><li>Attending: <%= user.events.title %></li></ul>
+        <li class="users"><%= user.first_name %> <%= user.last_name %></li>
+        <ul><li>
+            <% user.events.each do |event| %>
+                <li><%= event.title %></li>
+            <% end %>
+
+        </li></ul>
      </ul>
  <% end %>

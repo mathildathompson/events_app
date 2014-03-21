@@ -13,6 +13,6 @@ e3 = Event.create(:title => 'Blue Dragon: a Framework for a Mission to Mars ', :
 
 u1.events = [e1, e2, e3]
 u2.events = [e3]
-e3.users = [u3]
+u3.events = [e1,e3]
 
 
