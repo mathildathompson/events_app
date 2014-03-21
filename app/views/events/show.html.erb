@@ -1,2 +1,21 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1>Events RSS</h1>
+<p>Here is the feed</p>
+
+
+<ul>
+    <% @rss_event.each do |event| %>
+    <!-- gets the array of events -->
+
+        <% event.each do |sub_event| %>
+          <!-- # starts to iterate through each sub-event in the event array  -->  
+
+        <li><%= event.title%></li>
+        
+        <% end %>
+
+    <% end %>
+</ul>
+
+<!-- @rss_event = some shit from the model. could i just grab it straight from feed for now? yep maybe --> 
+
+
