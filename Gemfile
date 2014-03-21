@@ -10,6 +10,7 @@ gem 'binding_of_caller'
 gem 'pry'
 gem 'protected_attributes'
 gem 'annotate'
+gem 'feedjira'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
