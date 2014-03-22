@@ -1,3 +1,5 @@
+This is the readme for the rss branch
+
 To do next: 
 
 1. Use twitter bootstrap to add icons to homepage. 
