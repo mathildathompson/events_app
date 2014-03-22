@@ -7,15 +7,14 @@ class EventsController < ApplicationController
   end
 
   def new
+    
   end
 
   def edit
   end
 
-  def show
-     
-
-    url = %w[http://www.sydneytalks.com.au/index2.php?option=com_rss&no_html=1&catid=16]
+  def show   
+    url = %w[http://musicfeeds.com.au/feeds/sydney-festival-2014/feed/]
     feed = Feedjira::Feed.fetch_and_parse url 
     @rss_event = feed.values.first.entries
   end

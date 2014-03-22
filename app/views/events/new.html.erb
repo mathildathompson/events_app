@@ -1,2 +1,17 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h1>Play</h1>
+
+
+
+<ul>
+    <% @event_list.each do |event| %>
+    <!-- gets the array of events -->
+
+        <% event.each do |sub_event| %>
+          <!-- # starts to iterate through each sub-event in the event array  -->  
+
+        <li><%= event.title%></li>
+        
+        <% end %>
+
+    <% end %>
+</ul>
