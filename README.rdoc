@@ -1,28 +1,6 @@
-== README
+To do next: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Use twitter bootstrap to add icons to homepage. 
+2. Use Jquery to hide event item when minus icon is clicked. 
+3. Use Devise to allow users to log in and access own account. 
+4. Use rails to let users add event id's to their row in events_users.psql

@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Showing and hiding</h1>
+
+<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
+<li id="event1">event1<span>Yes</span><span class = "hide" id="remove1">No</span></li>
+<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
+<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
+
+<a href="#" id="toggle">show/hide</a>
+<div id="bodyText">
+
+Fish eat fish
+
+</div>
+
+<script type="text/javascript">
+
+// $(document).ready(alert('Ready for Jquery?'));
+
+$(document).ready(function() {
+    $('#body.Text').hide();
+    $('#toggle').toggle(
+        function() {
+            $('#bodyText').show('slow');
+            $('#bodyText').effect('highlight', {}, 2000);
+        },
+        function() {
+            $('#bodyText').hide();
+        }
+    );
+});
+
+</script>
+
+   
