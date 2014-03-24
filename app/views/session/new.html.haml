@@ -1,0 +1,14 @@
+- if flash[:notice].present?
+  %h2= flash[:notice]
+
+= form_tag '/login' do
+  %div.form-group
+    = label_tag 'first_name'
+    = text_field_tag 'first_name', nil, :autofocus => true, :placeholder => 'craigsy', :class => 'form-control'
+
+  %div.form-group
+    = label_tag 'password'
+    = password_field_tag 'password', nil, :class => 'form-control'
+
+  = submit_tag 'Login', :class => 'btn btn-info'
+

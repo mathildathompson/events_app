@@ -25,6 +25,23 @@
     margin:0px;
     padding:0px;
 }
+
+#main_nav {
+
+  display:inline-block;
+  position:absolute;
+  top:5px;
+  right:30px;
+  
+}
+
+
+#main_nav li {
+
+  display:inline-block;
+  padding-right:20px;
+ 
+}
 #container {
 
     max-width: 960px;
@@ -41,6 +58,12 @@ h1 {
 li h2 {
 
   margin-top: 40px;
+}
+
+form {
+
+  width:30%;
+  margin:auto;
 }
 
 

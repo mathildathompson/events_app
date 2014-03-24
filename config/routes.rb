@@ -1,6 +1,9 @@
 EventApp::Application.routes.draw do
 
   root :to => 'events#index'
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
   resources :users, :events
 
 end

@@ -1,0 +1,25 @@
+- if @user.errors.any?
+  %ol
+    - @user.errors.full_messages.each do |msg|
+      %li= msg
+
+%section.signup
+  = form_for @user do |f|
+    %div.form-group
+      = f.label :first_name
+      = f.text_field :first_name, :autofocus => true, :class => 'form-control'
+    %div.form-group
+      = f.label :last_name
+      = f.text_field :last_name, :class => 'form-control'
+    %div.form-group
+      = f.label :password_field
+      = f.password_field :password, :class => 'form-control'
+    %div.form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, :class => 'form-control'
+
+    = f.submit :class => 'btn btn-info'
+
+
+
+
