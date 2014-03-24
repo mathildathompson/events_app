@@ -1,8 +1,11 @@
 <!-- homepage -->
 
+
+
 <% @events.each do |event| %>
  <div class="event_list">   
  <ul>
+
     <li><h2><%= event.title %></h2></li>
     <li><%= event.description %></li>
     <li><%= event.date %></li>
@@ -10,8 +13,9 @@
     <li><%= event.location %></li>
     <li>$<%= event.price %></li>
     <li><%= event.contact %></li>
-    <li class ="option_yes">Yes<span class="removeBtn" id="remove">(x)</span></li>
-    <li class ="option_no">No<span class="removeBtn" id="remove">(x)</span></li>
+    <li class ="option_no"><span class="glyphicon glyphicon-minus-sign"></span>
+    <li class ="option_yes"><span class="glyphicon glyphicon-plus-sign"></span></li>
+    
  </ul>
 </div>
     <!--  Here we do two things. Two buttons. One allows the user to hide the element on the page usign jquery. The other allows them to add it to their event_id keys. So it seems my next two jobs aren't rails at all. 1. Use Jquery to hide element from DOM. 2. Use devise to allow users to sign in. Then 3. Use rails/ruby to allow a user to save an event.  --> 

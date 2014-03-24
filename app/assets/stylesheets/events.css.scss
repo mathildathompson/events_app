@@ -1,5 +1,24 @@
-.event_yes_or_no {
+.option_yes {
     
-    margin-top:30px;
-   
+    display:inline;
+    font-size:32px;
+    
+    span {
+    
+    margin-top: 20px;
+
+    
+  }
+}
+
+.option_no {
+    
+    display:inline;
+    font-size:32px;
+
+    span {
+    
+    margin-top: 20px;
+}
+
 }
