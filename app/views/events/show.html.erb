@@ -2,20 +2,7 @@
 <p>Here is the feed</p>
 
 
-<ul>
-    <% @rss_event.each do |event| %>
-    <!-- gets the array of events -->
 
-        <% event.each do |sub_event| %>
-          <!-- # starts to iterate through each sub-event in the event array  -->  
 
-        <li><%= event.title%></li>
-        
-        <% end %>
-
-    <% end %>
-</ul>
-
-<!-- @rss_event = some shit from the model. could i just grab it straight from feed for now? yep maybe --> 
 
 

@@ -1,34 +1,12 @@
-<h1>Showing and hiding</h1>
 
-<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
-<li id="event1">event1<span>Yes</span><span class = "hide" id="remove1">No</span></li>
-<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
-<li id="event1">event1<span class = "hide" id="remove1">No</span></li>
+ <% @users.each do |user| %>
+     <ul>
+        <li class="users"><%= user.first_name %> <%= user.last_name %></li>
+        <ul><li>
+            <% user.events.each do |event| %>
+                <li><%= event.title %></li>
+            <% end %>
 
-<a href="#" id="toggle">show/hide</a>
-<div id="bodyText">
-
-Fish eat fish
-
-</div>
-
-<script type="text/javascript">
-
-// $(document).ready(alert('Ready for Jquery?'));
-
-$(document).ready(function() {
-    $('#body.Text').hide();
-    $('#toggle').toggle(
-        function() {
-            $('#bodyText').show('slow');
-            $('#bodyText').effect('highlight', {}, 2000);
-        },
-        function() {
-            $('#bodyText').hide();
-        }
-    );
-});
-
-</script>
-
-   
+        </li></ul>
+     </ul>
+ <% end %>
