@@ -1,7 +1,7 @@
 <!-- homepage -->
 
 <% @events.each do |event| %>
- <div class = "event_list">   
+ <div class="event_list">   
  <ul>
     <li><h2><%= event.title %></h2></li>
     <li><%= event.description %></li>
@@ -20,17 +20,17 @@
 
 <script type="text/javascript">
 
-
-
 $(document).ready(function() {
 
-    $('.event_list').addClass('animated bounceOutLeft');
-  
+    
     $('.option_yes').click(function() {
-        $(this).parents('div.event_list').hide(2000);
+        $(this).closest('div.event_list').addClass('animated bounceOutRight');
+        $(this).closest('div.event_list').hide(1000);
     });
+    
      $('.option_no').click(function() {
-        $(this).parents('div.event_list').hide(2000);
+        $(this).closest('div.event_list').addClass('animated bounceOutLeft');
+        $(this).closest('div.event_list').hide(1000);
     });    
 });
 </script>
