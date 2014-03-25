@@ -1,8 +1,1 @@
-This is the readme for the rss branch
-
-To do next: 
-
-1. Use twitter bootstrap to add icons to homepage. 
-2. Use Jquery to hide event item when minus icon is clicked. 
-3. Use Devise to allow users to log in and access own account. 
-4. Use rails to let users add event id's to their row in events_users.psql
+RSS branch part 2
