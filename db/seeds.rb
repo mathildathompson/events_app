@@ -1,9 +1,10 @@
 User.destroy_all
 Event.destroy_all
 
-u1 = User.create(:first_name => 'Tom', :last_name => 'Dane')
-u2 = User.create(:first_name => 'Ian', :last_name => 'Johsnon')
-u3 = User.create(:first_name => 'Arash', :last_name => 'Katrak')
+u1 = User.create(:first_name => 'Tom', :last_name => 'Dane', :admin => true, password: 'duck', password_confirmation: 'duck')
+u2 = User.create(:first_name => 'Ian', :last_name => 'Johsnon', :admin => false, password: 'duck', password_confirmation: 'duck')
+u3 = User.create(:first_name => 'Arash', :last_name => 'Katrak', :admin => false, password: 'duck', password_confirmation: 'duck')
+
 
 e1 = Event.create(:title => 'Philosophy in the Age of Democracy', :description => 'How does healthy democracy both depend on and inform philosophical education? What benefits do we expect to flow from public support of philosophical research? In the light of comments made in the 2013 federal election campaign, Professor Paul Redding, Richard Eldridge and Dalia Nassar address different aspects of these questions.', :time => '6:00pm-7:30pm', :date => '25/03/2014', :location =>'Law School Foyer, Eastern Avenue, University of Sydney', :price => 0, :contact => 'The University of Sydney (02) 9351 2943')
 
