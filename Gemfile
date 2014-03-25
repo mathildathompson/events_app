@@ -5,14 +5,18 @@ gem 'rails', '4.0.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'pry'
-gem 'protected_attributes'
-gem 'annotate'
-gem 'feedjira'
+
+group :development do
+    gem 'better_errors'
+    gem 'binding_of_caller'
+    gem 'pry'  
+    gem 'annotate'
+    gem 'feedjira'
+end
+
 gem 'bcrypt-ruby'
 gem 'haml'
+gem 'protected_attributes'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
