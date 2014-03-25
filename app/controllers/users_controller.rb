@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_if_logged_in, :except => [:create, :new]
-  before_filter :check_if_admin, :only => [:index]
-
+  
   def index
     @users = User.all
   end

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+    @rss = FeedEntry.get_feed.entries
   end
 
   def create
@@ -17,11 +18,10 @@ class EventsController < ApplicationController
   def edit
   end
 
-  # def show   
-  #   # url = %w[http://musicfeeds.com.au/feeds/sydney-festival-2014/feed/]
-  #   # feed = Feedjira::Feed.fetch_and_parse url 
-  #   # @rss_event = feed.values.first.entries
-  # end
+  def show   
+
+    
+  end
 
   def update
   end
