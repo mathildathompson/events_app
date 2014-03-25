@@ -11,9 +11,9 @@
             <li><%= event.location %></li>
             <li>$<%= event.price %></li>
             <li><%= event.contact %></li>            
-            <li class ="option_no"><span class="glyphicon glyphicon-remove-circle"></span></li>  
+            <li class ="option_no"><a><span class="glyphicon glyphicon-remove-circle"></span></a></li>  
             <li class ="option_yes">    
-                <%= link_to events_path(:event_id => event.id), {:method=> :post, class: "glyphicon glyphicon-ok-circle"} do  %>
+                <%= link_to events_path(:event_id => event.id), {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
                 <% end %>
             </li>
 
