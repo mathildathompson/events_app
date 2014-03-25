@@ -11,13 +11,13 @@ group :development do
     gem 'better_errors'
     gem 'binding_of_caller'
     gem 'pry'  
-    gem 'annotate'
-    gem 'feedjira'
+    gem 'annotate'    
 end
 
 gem 'bcrypt-ruby'
 gem 'haml'
 gem 'protected_attributes'
+gem 'feedjira'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
