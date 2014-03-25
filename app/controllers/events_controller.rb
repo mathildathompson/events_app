@@ -4,6 +4,10 @@ class EventsController < ApplicationController
   end
 
   def create
+    @attending_event = Event.find params[:event_id]
+    @current_user.events << @attending_event
+    redirect_to events_path
+   
   end
 
   def new

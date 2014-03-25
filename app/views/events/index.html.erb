@@ -1,23 +1,26 @@
-<!-- homepage -->
-
-
+<!-- on this page i want to build a form. In HAML. This form allows a user to add an event to their database. It's just like the seed data. Or another form that we did in Joel's examples.  -->
 
 <% @events.each do |event| %>
- <div class="event_list">   
- <ul>
+     <div class="event_list">   
+        <ul>
 
-    <li><h2><%= event.title %></h2></li>
-    <li><%= event.description %></li>
-    <li><%= event.date %></li>
-    <li><%= event.time %></li>
-    <li><%= event.location %></li>
-    <li>$<%= event.price %></li>
-    <li><%= event.contact %></li>
-    <li class ="option_no"><span class="glyphicon glyphicon-remove-circle"></span>
-    <li class ="option_yes"><span class="glyphicon glyphicon-ok-circle"></span></li>
-    
- </ul>
-</div>
+            <li><h2><%= event.title %></h2></li>
+            <li><%= event.description %></li>
+            <li><%= event.date %></li>
+            <li><%= event.time %></li>
+            <li><%= event.location %></li>
+            <li>$<%= event.price %></li>
+            <li><%= event.contact %></li>            
+            <li class ="option_no"><a><span class="glyphicon glyphicon-remove-circle"></span></a></li>  
+            <li class ="option_yes">    
+                <%= link_to events_path(:event_id => event.id), {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
+                <% end %>
+            </li>
+
+            
+
+        </ul>
+     </div>
     <!--  Here we do two things. Two buttons. One allows the user to hide the element on the page usign jquery. The other allows them to add it to their event_id keys. So it seems my next two jobs aren't rails at all. 1. Use Jquery to hide element from DOM. 2. Use devise to allow users to sign in. Then 3. Use rails/ruby to allow a user to save an event.  --> 
      
 <% end %>
@@ -26,15 +29,14 @@
 
 $(document).ready(function() {
 
-    
+   
+    $('.option_no').click(function() {
+        $(this).closest('div.event_list').addClass('animated bounceOutLeft');
+        $(this).closest('div.event_list').hide(1000);
+    });
     $('.option_yes').click(function() {
         $(this).closest('div.event_list').addClass('animated bounceOutRight');
         $(this).closest('div.event_list').hide(1000);
     });
-    
-     $('.option_no').click(function() {
-        $(this).closest('div.event_list').addClass('animated bounceOutLeft');
-        $(this).closest('div.event_list').hide(1000);
-    });    
-});
+ });
 </script>
