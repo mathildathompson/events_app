@@ -1,29 +1,30 @@
 <!-- on this page i want to build a form. In HAML. This form allows a user to add an event to their database. It's just like the seed data. Or another form that we did in Joel's examples.  -->
 
-<% @rss.each do |event| %>
+<div id = "card_holder">
+<!-- here i want to add a function that increments the z index of each div by 1  -->
+<% @rss.each_with_index do |event, index| %>
         
-        <div class="event_list">
-        <ul>
-
-            <li><h2><%= event.name %></h2></li>
-            <li><%= event.summary %></li>
-            <li class ="option_no"><a><span class="glyphicon glyphicon-remove-circle"></span></a></li>  
-            <li class ="option_yes">    
-                <%= link_to "/events/#{ event.id}?viewed=true", {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
-                <% end %>
-            </li>
-     
-        </ul>
+        <div class="event_list" style="z-index:<%= index %>;">
+            <ul>
+                <li><h2><%= event.name %></h2></li>
+                <li><%= event.summary %></li>
+                <li><a href="<%= event.url %>">link</a></li>
+                <li class ="option_no"><a><span class="glyphicon glyphicon-remove-circle"></span></a></li>  
+                <li class ="option_yes">    
+                    <%= link_to events_path(:event_id => event.id), {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
+                    <% end %>
+                </li>     
+            </ul>
        </div>
 <% end %>
 
-
+</div>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
 
-   
+     
     $('.option_no').click(function() {
         $(this).closest('div.event_list').addClass('animated bounceOutLeft');
         $(this).closest('div.event_list').hide(1000);
@@ -34,16 +35,6 @@ $(document).ready(function() {
     });
  });
 
-$('.option_no').click(function() {
-    var $this = $(this);
-    if ($this.hasClass("clicked-once")) {
-        // already been clicked once, hide it
-        $this.hide();
-    }
-    else {
-        // first time this is clicked, mark it
-        $this.addClass("clicked-once");
-    }
-});
+
 
 </script>
