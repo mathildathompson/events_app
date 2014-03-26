@@ -4,11 +4,9 @@
      <ul>
         <li><%= event.name %></li>
         <ul>
-            <li>Friends also going:</li>
-            <% @current_user.events.each do |event| %>
-                <% event.users.each do |user| %>
-                    <li><%= user.first_name %><li>                 
-                <% end %>
+            <li>Friends also going:</li>            
+            <% event.users.each do |user| %>
+                <li><%= user.first_name unless user.first_name == @current_user.first_name %><li>                 
             <% end %>
         </ul> 
      </ul>

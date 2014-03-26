@@ -11,6 +11,6 @@
 
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :admin, :password, :password_confirmation
-  has_and_belongs_to_many :events, :uniq => true
+  has_and_belongs_to_many :events
   has_secure_password
 end

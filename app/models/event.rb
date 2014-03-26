@@ -14,7 +14,7 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :name, :summary, :url
-  has_and_belongs_to_many :users, :uniq => true
+  has_and_belongs_to_many :users
 
 
   def self.get_feed    
