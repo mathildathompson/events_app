@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EventApp</title>
+  <title>PlayGo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -14,7 +14,7 @@
   <nav id="main_nav">
   <li><%= link_to('Sign up', new_user_path) %></li>
   <li><%= link_to('Sign in', login_path) %></li>
-  <li><%= link_to('Log out', login_path, :method => :delete, :confirm => 'Really log out?')%></li>
+  <li><%= link_to('Log out', login_path, :method => :delete)%></li>
   </nav>
   <div id="container">
      <% if @current_user %>

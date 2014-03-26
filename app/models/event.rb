@@ -13,10 +13,27 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #
+ 
 
 class Event < ActiveRecord::Base
-  attr_accessible :title, :description, :time, :date, :location, :price, :contact
+  attr_accessible :name, :summary, :url
   has_and_belongs_to_many :users
 
+  def self.get_feed    
+    feed = Feedjira::Feed.fetch_and_parse('http://www.sydneytalks.com.au/index2.php?option=com_rss&no_html=1')
+    updated_feed = Feedjira::Feed.update(feed)
+    if updated_feed.updated?       
+      feed.entries.each do |entry|
 
+        Event.create!(
+          :name         => entry.title,
+          :summary      => entry.summary,
+          :url          => entry.url,
+          :published_at => entry.published,          
+        )
+      end
+    end
+  end
 end
+
+

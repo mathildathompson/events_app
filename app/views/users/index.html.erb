@@ -3,7 +3,7 @@
         <li class="users"><%= user.first_name %> <%= user.last_name %></li>
         <ul><li>
             <% user.events.each do |event| %>
-                <li><%= event.title %>
+                <li><%= event.name %>
                 </li>
             <% end %>
 

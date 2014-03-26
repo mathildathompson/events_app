@@ -17,13 +17,9 @@ ActiveRecord::Schema.define(version: 20140325060835) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.time     "time"
-    t.date     "date"
-    t.string   "location"
-    t.integer  "price"
-    t.string   "contact"
+    t.string   "name"
+    t.text     "summary"
+    t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,14 +27,6 @@ ActiveRecord::Schema.define(version: 20140325060835) do
   create_table "events_users", force: true do |t|
     t.integer "event_id"
     t.integer "user_id"
-  end
-
-  create_table "feed_entries", force: true do |t|
-    t.string  "name"
-    t.text    "summary"
-    t.text    "url"
-    t.time    "published_at"
-    t.integer "guid"
   end
 
   create_table "users", force: true do |t|
