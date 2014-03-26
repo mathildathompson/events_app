@@ -25,8 +25,7 @@ class Event < ActiveRecord::Base
         Event.create!(
           :name         => entry.title,
           :summary      => entry.summary,
-          :url          => entry.url,
-          :published_at => entry.published,          
+          :url          => entry.url,                
         )
       end
     end
