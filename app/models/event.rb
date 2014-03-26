@@ -14,7 +14,8 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :name, :summary, :url
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :users, :uniq => true
+
 
   def self.get_feed    
     feed = Feedjira::Feed.fetch_and_parse('http://www.sydneytalks.com.au/index2.php?option=com_rss&no_html=1')

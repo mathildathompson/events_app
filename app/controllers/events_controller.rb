@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   def create
     @attending_event = Event.find params[:event_id]
-    @current_user.events << @attending_event
+    @current_user.events << @attending_event unless @current_user.events.include?(@attending_event)
     redirect_to events_path
    
   end
