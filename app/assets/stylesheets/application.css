@@ -8,7 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap.min
+
  *= require_self
  *= require_tree .
 
@@ -26,12 +26,16 @@
     padding:0px;
 }
 
+/*body {
+
+  background: url('http://www.boudist.com/wp-content/uploads/2013/11/Sydney-Opera-House-40th-Annivesary-Concert_032.jpg');
+}*/
+
 #main_nav {
 
-  display:inline-block;
-  position:absolute;
-  top:5px;
-  right:30px;
+ max-width: 960px;
+ margin:auto;
+ text-align: center;
   
 }
 
@@ -39,25 +43,33 @@
 #main_nav li {
 
   display:inline-block;
-  padding-right:20px;
+  /*padding-right:20px;*/
  
 }
 #container {
 
-    max-width: 960px;
-    margin:auto;
-    text-align: center;
+  max-width: 960px;
+  margin:auto;
+  text-align: center;
+  position:relative;
+  top:100px;
+
 }
 
 h1 {
 
+/*  padding-left:20px;*/
+}
+
+h2 {
+
   display:inline-block;
-  padding-left:20px;
+ /* padding-left:20px;*/
 }
 
 li h2 {
 
-  margin-top: 40px;
+ /* margin-top: 40px;*/
 }
 
 form {
@@ -68,23 +80,40 @@ form {
 
 #card_holder {
   margin:auto;
-  max-width: 400px;
-  min-height: 400px;  
+  width: 400px;
+  height: 350px;  
   position:relative;
  
 }
 
 .event_list {
   margin:auto;
-  max-width: 400px;
-  min-height:400px;
+  width: 420px;
+  height: 350px;
   position:absolute;
-  top:0;
-  left:0;
   background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding:20px;
+}
+
+.event_list ul {
+  position:relative;
+  height: 350px;
+  
 }
 
   
+.option_yes {
+  position:absolute;
+  bottom: 20px;
+  right:130px;
+ 
+}
 
-
-
+.option_no  {
+  position:absolute;
+  bottom: 20px;
+  left:130px;
+ 
+}

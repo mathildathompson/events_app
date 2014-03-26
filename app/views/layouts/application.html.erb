@@ -4,30 +4,52 @@
   <title>PlayGo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/united/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   
 </head>
 
-<body>
+<body>  
 
 
-  <nav id="main_nav">
-   <%== intellinav  %>  
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+         <a href="/events" class="navbar-brand">Event Matcher</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+        
+            <li><a href="/events">Play</a></li>
+            <li><a href="/users">Matches</a></li>
+            
+            
+          </ul>
 
-  <!-- <li><%= link_to('Sign up', new_user_path) %></li>
-  <li><%= link_to('Sign in', login_path) %></li>
-  <li><%= link_to('Log out', login_path, :method => :delete)%></li> -->
-  </nav>
+          <ul class="nav navbar-nav navbar-right">
+             <li><%== intellinav  %></li>  
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
   <div id="container">
      <% if @current_user %>
      <span>Welcome back <%= @current_user.first_name %></span>
      <% end %>
-
+  
     <nav>
-      <a href="/events"><h1>Play</h1></a>
-      <a href="/users"><h1>Go</h1></a>
+      
+      
       
     </nav>
  
