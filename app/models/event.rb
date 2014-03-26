@@ -2,17 +2,14 @@
 #
 # Table name: events
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)
-#  description :text
-#  time        :time
-#  date        :date
-#  location    :string(255)
-#  price       :integer
-#  contact     :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  summary    :text
+#  url        :text
+#  created_at :datetime
+#  updated_at :datetime
 #
+
  
 
 class Event < ActiveRecord::Base
