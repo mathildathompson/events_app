@@ -26,8 +26,9 @@
     <div class="event_list" style="background:url('http://i2.wp.com/allthingsd.com/files/2013/09/redchairs-640x480.jpg?resize=640%2C480');">
         <% if @current_user.present? %>
         <p style="color:white; font-size:1.5em;">There are no more events </p>
+        <p style="color:white; font-size:1.5em;">View your <a href="/users">results</a></p>
         <% else %>
-        <p style="color:white; font-size:1.5em;">Sign up to save your results </p>
+        <p style="color:white; font-size:1.5em;"><a href="/users/new">Sign up</a> to save your results </p>
         <% end %>
     </div>
 </div>
