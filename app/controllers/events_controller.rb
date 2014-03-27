@@ -4,7 +4,12 @@ class EventsController < ApplicationController
     #randomly 1 times in 20. This should be enough as the feed is not updated regularly. 
     x = rand(1..20)
     @rss = Event.get_feed if x == 1
-    @rss = Event.all
+    if @current_user.present?
+      @rss = Event.all - @current_user.events
+    else
+      @rss = Event.all
+    end
+
   end
 
   def create
