@@ -158,6 +158,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   pg
   protected_attributes
   pry

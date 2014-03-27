@@ -19,6 +19,8 @@ gem 'bcrypt-ruby'
 gem 'haml'
 gem 'protected_attributes'
 gem 'feedjira'
+gem 'nokogiri'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

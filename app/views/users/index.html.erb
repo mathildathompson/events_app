@@ -12,8 +12,9 @@
                     <div class="panel-body">   
                     <li>Also interested:</li>                           
                      <% events.event.users.each do |user| %>                       
-                        <li><%= user.first_name unless user.first_name == @current_user.first_name && user.attending.select { |x| x.attending == false } %>
-                        <li>                                         
+                        <span>
+                            <%= user.first_name unless user.first_name == @current_user.first_name && user.attending.select { |x| x.attending == false } %>
+                        </span>                                      
                      <% end %>
                      </div>
                     
