@@ -22,16 +22,29 @@ class Event < ActiveRecord::Base
   # #if using nokogiri:
 
     doc = Nokogiri::HTML(open("http://www.sydneytalks.com.au/talks_this_month/25.html").read)
-    @title = doc.at('td.ev_td_title').inner_text
-    @summary = doc.at('td.ev_td_content').inner_text
+    titles = doc.css('td.ev_td_title')
+    summaries = doc.css('td.ev_td_content')
+    number = titles.count
     # @time = doc.at('span.ev_td_detail_field').inner_text
     # @price = doc.at('span.ev_td_detail_field').inner_text
     # @date = doc.at ('td.ev_td_date').inner_text
 
-    Event.create!(
-              :name         => @title,
-              :summary      => @summary                             
-    )
+    0.upto(number - 1) do |x|
+
+      @title = titles[x].css('b').text
+      @summary = summaries[x].inner_text
+        
+      Event.create!(
+        :name => @title,
+        :summary => @summary
+      )  
+
+    end
+end
+    # Event.create!(
+    #           :name         => @title,
+    #           :summary      => @summary                             
+    # )
 
   #  end 
     #if using feedjira
@@ -50,6 +63,6 @@ class Event < ActiveRecord::Base
         # end
  
 
-end
+
 
 
