@@ -14,7 +14,8 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :name, :summary, :url
-  has_and_belongs_to_many :users
+  has_many :rsvps
+  has_many :users, :through => :rsvps
 
 
   def self.get_feed    

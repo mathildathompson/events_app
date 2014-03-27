@@ -9,14 +9,19 @@
                 <li><h2><%= event.name %></h2></li>
                 <li><%= event.summary %></li>
                 <li><a href="<%= event.url %>">link</a></li>
-                <li class ="option_no"><a><span class="glyphicon glyphicon-remove-circle"></span></a></li>  
+                <li class ="option_no">
+                    <%= link_to "/events/?id=#{event.id}&attending=false", {:method=> :post, :remote => true, class: "glyphicon glyphicon-remove-circle"} do %>
+                    <% end %>
+                </li>  
                 <li class ="option_yes">    
-                    <%= link_to events_path(:event_id => event.id), {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
+                    <%= link_to "/events/?id=#{event.id}&attending=true", {:method=> :post, :remote => true, class: "glyphicon glyphicon-ok-circle"} do  %>
                     <% end %>
                 </li>     
             </ul>
        </div>
 <% end %>
+
+
 
 <div class="event_list">
 <p> There are no more events </p>

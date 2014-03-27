@@ -13,8 +13,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @attending_event = Event.find params[:event_id]
-    @current_user.events << @attending_event unless @current_user.events.include?(@attending_event)
+
+    Rsvp.create(:event_id => params[:id], :user_id => @current_user.id, :attending => params[:attending])
+
+
+    # @attending_event = Event.find params[:event_id]
+    # @current_user.events << @attending_event unless @current_user.events.include?(@attending_event)
     redirect_to events_path
    
   end

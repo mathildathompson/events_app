@@ -11,6 +11,13 @@
 
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :admin, :password, :password_confirmation
-  has_and_belongs_to_many :events
+  has_many :rsvps
+  has_many :events, :through => :rsvps
   has_secure_password
+
+
+  def attending
+    self.rsvps.(:attending => true)
+  end
+
 end
