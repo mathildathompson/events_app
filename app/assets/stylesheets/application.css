@@ -110,7 +110,7 @@ form {
 
 #final {
   margin:auto;
-  max-width: 420px;
+  min-width: 420px;
   min-height: 420px;
   position:absolute;
   background-color: white;
