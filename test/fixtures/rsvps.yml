@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: rsvps
+#
+#  id         :integer          not null, primary key
+#  event_id   :integer
+#  user_id    :integer
+#  attending  :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

@@ -8,34 +8,47 @@
 #  url        :text
 #  created_at :datetime
 #  updated_at :datetime
+#  time       :string(255)
+#  price      :string(255)
+#  date       :string(255)
 #
 
 require 'open-uri'
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :summary, :url
+  attr_accessible :name, :summary, :date, :detail
   has_many :rsvps
   has_many :users, :through => :rsvps
 
  #if using nokogiri:
 
-    doc = Nokogiri::HTML(open("http://www.sydneytalks.com.au/talks_this_month/25.html").read)
-    titles = doc.css('td.ev_td_title')
-    summaries = doc.css('td.ev_td_content')
-    number = titles.count
-    # @time = doc.at('span.ev_td_detail_field').inner_text
-    # @price = doc.at('span.ev_td_detail_field').inner_text
-    # @date = doc.at ('td.ev_td_date').inner_text
 
-    0.upto(number - 1) do |x|
+    x = rand(1..20)
+    if x == 1
 
-      @title = titles[x].css('b').text
-      @summary = summaries[x].inner_text
-        
-      Event.create!(
-        :name => @title,
-        :summary => @summary
-      )  
+      doc = Nokogiri::HTML(open("http://www.sydneytalks.com.au/talks_this_month/25.html").read)
+      titles = doc.css('td.ev_td_title')
+      summaries = doc.css('td.ev_td_content')
+      details = doc.css('td.ev_td_details')
+      dates = doc.css('td.ev_td_date')
+      number = 11
+
+      0.upto(number - 1) do |x|
+
+        @title = titles[x].css('b').text if titles[x]
+        # these lines verify if there's still something in the array before they iterate
+        @summary = summaries[x].inner_text if summaries[x]
+        @date = dates[x].inner_text if dates[x]
+        @detail = details[x].inner_text if details[x]
+          
+        Event.create!(
+          :name => @title,
+          :summary => @summary,
+          :date => @date,
+          :detail => @detail
+        )  
+
+      end
 
     end
 end

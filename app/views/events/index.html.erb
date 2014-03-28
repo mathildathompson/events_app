@@ -3,12 +3,17 @@
 <div id = "card_holder">
 <!-- here i want to add a function that increments the z index of each div by 1  -->
     <% @rss.each_with_index do |event, index| %>
+        <% fields = event.detail.split /\w+: / %>
             
             <div class="event_list" style="z-index:<%= index %>;">
                 <ul>
                     <li><h2><%= event.name %></h2></li>
-                    <li><%= event.summary %></li>
+                    <li><%= event.summary %></li><br>
+                    <li><strong>When: </strong><%= fields.second %></li>
+                    <li><strong>Price: </strong><%= fields.third %></li>
+                    <li><strong>Where: </strong><%= fields.last %></li>
                     <li class ="option_no">
+
                         <%= link_to "/events/?id=#{event.id}&attending=false", {:method=> :post, :remote => true, class: "glyphicon glyphicon-remove-circle"} do %>
                         <% end %>
                     </li>  
