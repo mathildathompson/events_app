@@ -17,9 +17,7 @@ class Event < ActiveRecord::Base
   has_many :rsvps
   has_many :users, :through => :rsvps
 
-  # def self.get_feed   
-  
-  # #if using nokogiri:
+ #if using nokogiri:
 
     doc = Nokogiri::HTML(open("http://www.sydneytalks.com.au/talks_this_month/25.html").read)
     titles = doc.css('td.ev_td_title')
@@ -41,12 +39,7 @@ class Event < ActiveRecord::Base
 
     end
 end
-    # Event.create!(
-    #           :name         => @title,
-    #           :summary      => @summary                             
-    # )
-
-  #  end 
+   
     #if using feedjira
 
         # feed = Feedjira::Feed.fetch_and_parse('http://www.sydneytalks.com.au/index2.php?option=com_rss&no_html=1')
