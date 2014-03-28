@@ -108,6 +108,17 @@ form {
   
 }
 
+#final {
+  margin:auto;
+  max-width: 420px;
+  min-height: 420px;
+  position:absolute;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding:20px 20px 20px 20px;
+}
+
   
 .option_yes {
   position:absolute;

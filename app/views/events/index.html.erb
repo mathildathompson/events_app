@@ -1,6 +1,5 @@
 <!-- on this page i want to build a form. In HAML. This form allows a user to add an event to their database. It's just like the seed data. Or another form that we did in Joel's examples.  -->
 
-
 <div id = "card_holder">
 <!-- here i want to add a function that increments the z index of each div by 1  -->
     <% @rss.each_with_index do |event, index| %>
@@ -21,64 +20,9 @@
            </div>
     <% end %>
 
-<!-- <table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="info">
-      <td>3</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="success">
-      <td>4</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="danger">
-      <td>5</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="warning">
-      <td>6</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="active">
-      <td>7</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-  </tbody>
-</table>  -->
-
 
     
-    <div class="event_list" style="background:url('http://i2.wp.com/allthingsd.com/files/2013/09/redchairs-640x480.jpg?resize=640%2C480');">
+    <div id = "final" style="background:url('http://i2.wp.com/allthingsd.com/files/2013/09/redchairs-640x480.jpg?resize=640%2C480');">
         <% if @current_user.present? %>
         <p style="color:white; font-size:1.5em;">There are no more events </p>
         <p style="color:white; font-size:1.5em;">View your <a href="/users">results</a></p>
