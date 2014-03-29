@@ -1,20 +1,20 @@
 <!-- in this file I want to show all the events that a user is going to. And also then show underneath, all the other people attending that event -->
 <div id = "matches">
 <h3>Your talks</h3>    
-<% @current_user.attending.each do |events| %>
+<% @current_user.attending.each do |rsvp| %>
 
     <ul>
         <div class="panel panel-danger">
             <div class="panel-heading">
                 <li class="panel-title">
-                    <%= events.event.name %></li>
+                    <%= rsvp.event.name %></li>
             </div> 
                 <ul>
                     <div class="panel-body">   
                     <li>Also interested:</li>                           
-                     <% events.event.users.each do |user| %>                       
+                     <% rsvp.event.users.each do |user| %>                       
                         <span>
-                            <%= user.first_name unless user.first_name == @current_user.first_name && user.attending.select { |x| x.attending == false } %>
+                            <%= user.first_name unless user == @current_user ||  user.attending.select{|rsv| rsv.event_id == rsvp.event.id && rsv.attending == true} == [] %>
                         </span>                                      
                      <% end %>
                      </div>

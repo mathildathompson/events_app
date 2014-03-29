@@ -19,38 +19,38 @@ class Event < ActiveRecord::Base
   attr_accessible :name, :summary, :date, :detail
   has_many :rsvps
   has_many :users, :through => :rsvps
+  validates :name, :presence => :true, :uniqueness => true #Add validation, an event will not be saved to the database if it does not have a name; 
+                                                           #Cannot save an event with the same name to the database; 
 
  #if using nokogiri:
-
-
-    x = rand(1..20)
-    if x == 1
-
+  def self.get_feed(num)
+    if num == 1
       doc = Nokogiri::HTML(open("http://www.sydneytalks.com.au/talks_this_month/25.html").read)
       titles = doc.css('td.ev_td_title')
       summaries = doc.css('td.ev_td_content')
       details = doc.css('td.ev_td_details')
       dates = doc.css('td.ev_td_date')
-      number = 11
+      number = 10
 
       0.upto(number - 1) do |x|
-
-        @title = titles[x].css('b').text if titles[x]
+        #Change the instance varibales to local variables;
+        #When you loop through will not save the previous value from loop before in instance varibale;
+        title = titles[x].css('b').text if titles[x]
         # these lines verify if there's still something in the array before they iterate
-        @summary = summaries[x].inner_text if summaries[x]
-        @date = dates[x].inner_text if dates[x]
-        @detail = details[x].inner_text if details[x]
-          
-        Event.create!(
-          :name => @title,
-          :summary => @summary,
-          :date => @date,
-          :detail => @detail
+        summary = summaries[x].inner_text if summaries[x]
+        date = dates[x].inner_text if dates[x]
+        detail = details[x].inner_text if details[x]
+        #Take away the ! here, if event does not have name it will not save to the database, but will not throw us an error;   
+        Event.create(
+          :name => title,
+          :summary => summary,
+          :date => date,
+          :detail => detail
         )  
 
+        end
       end
-
-    end
+  end
 end
    
     #if using feedjira
