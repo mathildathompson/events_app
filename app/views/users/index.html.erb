@@ -14,7 +14,7 @@
                     <li>Also interested:</li>                           
                      <% rsvp.event.users.each do |user| %>                       
                         <span>
-                            <%= user.first_name unless user == @current_user ||  user.attending.select{|rsv| rsv.event_id == rsvp.event.id && rsv.attending == true} == [] %>
+                            <%= user.first_name unless user == @current_user ||  user.attending.event_id.include? rsvp.event.id %>
                         </span>                                      
                      <% end %>
                      </div>
